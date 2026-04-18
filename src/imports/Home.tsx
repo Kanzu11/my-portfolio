@@ -94,7 +94,7 @@ export default function Home() {
                  <h3 className="text-2xl font-medium">Library System</h3>
                  <p className="text-[#abb2bf]">Role-based access platform improving security and scalability.</p>
                  <div className="mt-auto flex gap-4 pt-4">
-                    <span className="border border-[#c778dd] px-4 py-1 hover:bg-[#c778dd]/20 cursor-pointer transition-colors">Live ~&gt;</span>
+                    <motion.a href="https://library-management-system-frontend-phi.vercel.app/" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border border-[#c778dd] px-4 py-1 hover:bg-[#c778dd]/20 transition-colors inline-block">Live ~&gt;</motion.a>
                  </div>
                </div>
              </motion.div>
@@ -111,7 +111,7 @@ export default function Home() {
                  <h3 className="text-2xl font-medium">AI Web Chatbot</h3>
                  <p className="text-[#abb2bf]">Full-stack AI chatbot with vector search and PDF knowledge retrieval.</p>
                  <div className="mt-auto flex gap-4 pt-4">
-                    <span className="border border-[#c778dd] px-4 py-1 hover:bg-[#c778dd]/20 cursor-pointer transition-colors">Live ~&gt;</span>
+                    <motion.a href="https://cse-dev.vercel.app/" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border border-[#c778dd] px-4 py-1 hover:bg-[#c778dd]/20 transition-colors inline-block">Live ~&gt;</motion.a>
                  </div>
                </div>
              </motion.div>
@@ -128,7 +128,7 @@ export default function Home() {
                  <h3 className="text-2xl font-medium">Python Games</h3>
                  <p className="text-[#abb2bf]">Rock-Paper-Scissors, Tip Calculator and Treasure Game algorithms.</p>
                  <div className="mt-auto flex gap-4 pt-4">
-                    <span className="border border-[#abb2bf] px-4 py-1 text-[#abb2bf] hover:bg-[#abb2bf]/20 cursor-pointer transition-colors">Code &gt;=</span>
+                    <motion.a href="https://github.com/Kanzu11/Phyton" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border border-[#abb2bf] px-4 py-1 text-[#abb2bf] hover:bg-[#abb2bf]/20 transition-colors inline-block">Code &gt;=</motion.a>
                  </div>
                </div>
              </motion.div>

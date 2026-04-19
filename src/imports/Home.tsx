@@ -56,6 +56,12 @@ export default function Home() {
                          rotate: [0, -3, 3, -1, 0],
                          transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
                      }}
+                     whileTap={{
+                         scaleX: [1, 1.08, 0.95, 1.05, 1], 
+                         scaleY: [1, 0.92, 1.05, 0.95, 1], 
+                         rotate: [0, -3, 3, -1, 0],
+                         transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                     }}
                      src={heroImg} 
                      alt="Kanzedin Akmel" 
                      className="z-10 w-full max-w-[250px] h-auto object-contain border-b border-[#c778dd] cursor-pointer" 

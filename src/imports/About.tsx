@@ -48,6 +48,12 @@ export default function About() {
                       rotate: [0, 3, -3, 1, 0],
                       transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
                   }}
+                  whileTap={{ 
+                      scaleX: [1, 1.08, 0.95, 1.05, 1], 
+                      scaleY: [1, 0.92, 1.05, 0.95, 1], 
+                      rotate: [0, 3, -3, 1, 0],
+                      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                  }}
                   src={aboutImg} alt="About Kanzedin" className="w-full max-w-[300px] h-auto object-contain border-b border-l border-[#c778dd] p-4 cursor-pointer" />
            </motion.div>
         </motion.section>

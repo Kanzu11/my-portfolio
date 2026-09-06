@@ -1,105 +1,131 @@
-/// <reference path="../custom.d.ts" />
+import { Link } from "react-router";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, BriefcaseBusiness, CircuitBoard, GraduationCap } from "lucide-react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
-import aboutImg from "../assets/54460c6b07a60652048526012507cff338176e45.png";
-import { motion } from "framer-motion";
+import Reveal from "../app/components/Reveal";
+import SectionHeading from "../app/components/SectionHeading";
+import { skills } from "../app/data/portfolio";
 
 export default function About() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="min-h-screen bg-[#282c33] text-white font-['Fira_Code'] flex flex-col overflow-hidden">
+    <div className="site-shell">
       <Header />
-      <main className="flex-grow max-w-5xl mx-auto px-4 w-full flex flex-col gap-16 pt-12">
-        {/* Page Title */}
-        <motion.section initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="flex flex-col gap-4">
-          <h1 className="text-4xl font-bold"><span className="text-[#c778dd]">/</span>about-me</h1>
-          <p className="text-[#abb2bf]">Who am i?</p>
+      <main className="site-main page-main about-main">
+        <motion.section
+          className="page-intro about-intro"
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0.01 : 0.62, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="eyebrow">About / Kanzedin Akmel</p>
+          <h1>A systems mindset, applied to the web.</h1>
+          <p>
+            I’m a full-stack developer and Electrical &amp; Computer Engineering student who enjoys turning dense
+            problems into clear, useful tools.
+          </p>
         </motion.section>
 
-        {/* About Section */}
-        <motion.section 
-           initial="hidden" animate="visible" variants={{
-             hidden: { opacity: 0 },
-             visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-           }}
-           className="flex flex-col md:flex-row gap-12 w-full">
-           <motion.div variants={fadeUp} className="flex-1 flex flex-col gap-6 text-[#abb2bf] leading-relaxed">
-              <p>Hello, I’m Kanzedin Akmel!</p>
+        <section className="about-story section-block">
+          <Reveal className="story-main">
+            <p className="eyebrow">A little context</p>
+            <h2>I like the point where software meets the real world.</h2>
+            <div className="story-copy">
               <p>
-                I am a Full-Stack MERN Developer and an Electrical and Computer Engineering (ECE) student at Adama Science and Technology University located in Adama, Ethiopia.
+                I’m based in Adama, Ethiopia, studying Electronics &amp; Communication Engineering at Adama Science and
+                Technology University. That discipline has trained me to respect constraints, connections, and the
+                small details that make a system reliable.
               </p>
               <p>
-                I specialize in building RESTful APIs and AI-integrated web applications. My passion lies in backend systems, authentication, and building intelligent chatbot applications using Retrieval-Augmented Generation (RAG).
+                In software, I focus on full-stack applications, RESTful APIs, authentication, and AI-assisted
+                knowledge tools. I’m especially interested in products where good engineering makes a messy process
+                calmer and more useful for the people inside it.
               </p>
-              <p>
-                From processing extensive document knowledge bases to grounding AI responses, I always strive to blend hardware constraints and software capability into optimal solutions.
-              </p>
-           </motion.div>
-           <motion.div variants={fadeUp} className="flex-1 flex justify-center items-center relative">
-               <motion.img 
-                  initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.6 }}
-                  whileHover={{ 
-                      scaleX: [1, 1.08, 0.95, 1.05, 1], 
-                      scaleY: [1, 0.92, 1.05, 0.95, 1], 
-                      rotate: [0, 3, -3, 1, 0],
-                      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-                  }}
-                  whileTap={{ 
-                      scaleX: [1, 1.08, 0.95, 1.05, 1], 
-                      scaleY: [1, 0.92, 1.05, 0.95, 1], 
-                      rotate: [0, 3, -3, 1, 0],
-                      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-                  }}
-                  src={aboutImg} alt="About Kanzedin" className="w-full max-w-[300px] h-auto object-contain border-b border-l border-[#c778dd] p-4 cursor-pointer" />
-           </motion.div>
-        </motion.section>
-
-        {/* Education & Certificates */}
-        <motion.section 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp}
-            className="flex flex-col gap-8 w-full">
-            <h2 className="text-3xl"><span className="text-[#c778dd]">#</span>education-and-certificates</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <motion.div whileHover={{ y: -5 }} className="border border-[#abb2bf]/30 p-6 flex flex-col hover:border-[#c778dd] transition-colors bg-[#282c33]">
-                    <h3 className="text-2xl mb-2">B.Sc. ECE</h3>
-                    <p className="text-[#c778dd] font-bold mb-4">Adama Science and Technology University</p>
-                    <p className="text-[#abb2bf] text-sm mb-2">2023 - 06/2028</p>
-                    <p className="text-[#abb2bf]">Electronics & Communication Engineering</p>
-                </motion.div>
-                
-                <motion.div whileHover={{ y: -5 }} className="border border-[#abb2bf]/30 p-6 flex flex-col hover:border-[#c778dd] transition-colors bg-[#282c33]">
-                    <h3 className="text-2xl mb-2">Certifications</h3>
-                    <ul className="text-[#abb2bf] space-y-4 list-disc pl-4 mt-2">
-                        <li><strong className="text-white">Full stack web development bootcamp</strong> - Completed 3-week intensive program.</li>
-                        <li><strong className="text-white">Space Science certificate</strong> - Awarded for active participation & leading high school space club.</li>
-                        <li><strong className="text-white">Data analysis fundamentals</strong> - Data visualization techniques.</li>
-                        <li><strong className="text-white">Fundamentals of programming</strong> - Mastered key algorithms.</li>
-                    </ul>
-                </motion.div>
             </div>
-        </motion.section>
+          </Reveal>
 
-        {/* Experience Section */}
-        <motion.section 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp}
-            className="flex flex-col gap-8 w-full mb-12">
-            <h2 className="text-3xl"><span className="text-[#c778dd]">#</span>experience</h2>
-            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }} className="border-l-2 border-[#c778dd] pl-6 py-2 flex flex-col gap-4">
-                <div>
-                   <h3 className="text-2xl font-medium">Astu msj Bootcamp <span className="text-[#c778dd] text-lg">(ASTUMSJ)</span></h3>
-                   <p className="text-[#abb2bf] italic">Adama</p>
-                </div>
-                <ul className="list-disc leading-relaxed text-[#abb2bf] pl-4 space-y-2">
-                    <li>Developed a full-stack library management system using React, Node.js, Express, and MongoDB.</li>
-                    <li>Implemented book browsing, borrowing, and admin management, improving workflow efficiency by 40%.</li>
-                    <li>Collaborated with a 5-member team on both frontend and backend integration, ensuring smooth deployment.</li>
+          <Reveal className="about-manifesto" delay={0.1}>
+            <CircuitBoard size={26} aria-hidden="true" />
+            <p>“Build the clearest path through the complexity.”</p>
+            <span>Working principle</span>
+          </Reveal>
+        </section>
+
+        <section className="section-block timeline-section">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Path so far"
+              title={<>Learning fast. <em>Building deliberately.</em></>}
+              description="A short timeline of the education and hands-on work shaping my approach."
+            />
+          </Reveal>
+          <div className="timeline">
+            <Reveal className="timeline-item" delay={0.05}>
+              <div className="timeline-icon"><GraduationCap size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">2023 — 2028</div>
+              <div className="timeline-content">
+                <p className="timeline-type">Education</p>
+                <h3>B.Sc. in Electronics &amp; Communication Engineering</h3>
+                <p>Adama Science and Technology University · Adama, Ethiopia</p>
+              </div>
+            </Reveal>
+            <Reveal className="timeline-item" delay={0.1}>
+              <div className="timeline-icon"><BriefcaseBusiness size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">Hands-on bootcamp</div>
+              <div className="timeline-content">
+                <p className="timeline-type">Experience</p>
+                <h3>Full-stack Library Management System</h3>
+                <p>
+                  Collaborated in a five-person team to build the React, Node.js, Express, and MongoDB application
+                  from user flows through deployment.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal className="timeline-item" delay={0.15}>
+              <div className="timeline-icon"><CircuitBoard size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">Continuous learning</div>
+              <div className="timeline-content">
+                <p className="timeline-type">Training</p>
+                <h3>Web development, data analysis &amp; programming fundamentals</h3>
+                <p>Complementing an engineering foundation with practical software, data, and problem-solving skills.</p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="section-block skills-section">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Toolbox"
+              title={<>The tools are only useful when the <em>thinking</em> is sound.</>}
+            />
+          </Reveal>
+          <div className="skills-grid">
+            {skills.map((skill, index) => (
+              <Reveal className="skill-panel" key={skill.label} delay={index * 0.06}>
+                <span className="skill-index">0{index + 1}</span>
+                <h3>{skill.label}</h3>
+                <ul>
+                  {skill.items.map((item) => <li key={item}>{item}</li>)}
                 </ul>
-            </motion.div>
-        </motion.section>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <Reveal>
+          <section className="closing-cta closing-cta-quiet">
+            <div>
+              <p className="eyebrow">Looking ahead</p>
+              <h2>I’m always interested in an honest technical challenge.</h2>
+            </div>
+            <Link to="/contacts" className="button button-light">
+              Say hello <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+          </section>
+        </Reveal>
       </main>
       <Footer />
     </div>

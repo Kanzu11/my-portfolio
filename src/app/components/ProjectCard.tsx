@@ -24,11 +24,22 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           <span>{project.number}</span>
           <span>CASE STUDY</span>
         </div>
-        <motion.div
-          className="project-art-orb"
-          animate={shouldReduceMotion ? undefined : { y: [0, -9, 0], rotate: [0, 8, 0] }}
-          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {project.image ? (
+          <div className="project-art-image-wrap">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="project-art-img"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <motion.div
+            className="project-art-orb"
+            animate={shouldReduceMotion ? undefined : { y: [0, -9, 0], rotate: [0, 8, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        )}
         <div className="project-art-grid" />
         <div className="project-art-copy">
           <Layers3 size={17} strokeWidth={1.7} />

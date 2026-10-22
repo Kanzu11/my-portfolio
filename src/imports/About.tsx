@@ -6,9 +6,11 @@ import Footer from "../app/components/Footer";
 import Reveal from "../app/components/Reveal";
 import SectionHeading from "../app/components/SectionHeading";
 import { skills } from "../app/data/portfolio";
+import { useResumeModal } from "../app/context/ResumeModalContext";
 
 export default function About() {
   const shouldReduceMotion = useReducedMotion();
+  const { openResume } = useResumeModal();
 
   return (
     <div className="site-shell">
@@ -47,9 +49,27 @@ export default function About() {
           </Reveal>
 
           <Reveal className="about-manifesto" delay={0.1}>
-            <CircuitBoard size={26} aria-hidden="true" />
+            <div className="about-portrait-wrap">
+              <img
+                src="/profile.jpg"
+                alt="Kanzedin Akmel"
+                className="about-portrait-img"
+              />
+              <div className="about-portrait-badge">
+                <span className="portrait-status-dot" />
+                <span>ASTU · ECE</span>
+              </div>
+            </div>
+            <CircuitBoard size={24} aria-hidden="true" />
             <p>“Build the clearest path through the complexity.”</p>
-            <span>Working principle</span>
+            <span>Working principle · Kanzedin Akmel</span>
+            <button
+              type="button"
+              onClick={openResume}
+              className="about-resume-cta"
+            >
+              Inspect Resume in Browser
+            </button>
           </Reveal>
         </section>
 

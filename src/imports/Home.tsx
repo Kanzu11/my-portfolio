@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, ArrowRight, Code2, Database, MapPin, Network } from "lucide-react";
+import { ArrowDownRight, ArrowRight, Eye, MapPin } from "lucide-react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import ProjectCard from "../app/components/ProjectCard";
 import Reveal from "../app/components/Reveal";
 import SectionHeading from "../app/components/SectionHeading";
+import HeroProfileCard from "../app/components/HeroProfileCard";
+import { useResumeModal } from "../app/context/ResumeModalContext";
 import { projects, skills } from "../app/data/portfolio";
 
 const headline = ["I build digital", "systems that feel", "clear and dependable."];
@@ -13,6 +15,7 @@ const toolbelt = ["React", "Node.js", "Python", "MongoDB", "REST APIs", "RAG sys
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
+  const { openResume } = useResumeModal();
 
   return (
     <div className="site-shell">
@@ -54,7 +57,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: shouldReduceMotion ? 0.01 : 0.55, delay: shouldReduceMotion ? 0 : 0.56 }}
             >
-              I’m Kanzedin Akmel, a full-stack developer and ECE student in Adama, Ethiopia. I turn complex
+              I’m Kanzedin Akmel, a full-stack developer and ECE student at ASTU in Adama, Ethiopia. I turn complex
               requirements into thoughtful web applications, APIs, and AI-assisted tools.
             </motion.p>
 
@@ -67,7 +70,9 @@ export default function Home() {
               <Link to="/projects" className="button button-primary">
                 Explore selected work <ArrowDownRight size={18} aria-hidden="true" />
               </Link>
-              <Link to="/contacts" className="button button-quiet">Let’s work together</Link>
+              <Link to="/contacts" className="button button-quiet">
+                Let’s work together
+              </Link>
             </motion.div>
 
             <motion.div
@@ -82,60 +87,12 @@ export default function Home() {
           </div>
 
           <motion.div
-            className="hero-visual"
+            className="hero-profile-wrap"
             initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94, y: shouldReduceMotion ? 0 : 28 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: shouldReduceMotion ? 0.01 : 0.8, delay: shouldReduceMotion ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
-            aria-label="A visual representation of systems, APIs, and connected applications"
-            role="img"
           >
-            <div className="hero-visual-grid" />
-            <motion.div
-              className="hero-orbit hero-orbit-one"
-              animate={shouldReduceMotion ? undefined : { rotate: 360 }}
-              transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              className="hero-orbit hero-orbit-two"
-              animate={shouldReduceMotion ? undefined : { rotate: -360 }}
-              transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              className="system-window"
-              animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="window-topbar">
-                <span /> <span /> <span />
-                <p>system.status</p>
-              </div>
-              <div className="window-body">
-                <p className="window-label">CURRENT FOCUS</p>
-                <p className="window-title">Useful interfaces.<br />Solid infrastructure.</p>
-                <div className="signal-rows" aria-hidden="true">
-                  <i /><i /><i /><i /><i /><i /><i /><i />
-                </div>
-                <div className="window-footer">
-                  <span><Code2 size={15} /> build</span>
-                  <span><Network size={15} /> connect</span>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              className="floating-card floating-card-data"
-              animate={shouldReduceMotion ? undefined : { y: [0, 10, 0], rotate: [0, -2, 0] }}
-              transition={{ duration: 6.7, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Database size={19} aria-hidden="true" />
-              <div><strong>Data</strong><span>structured</span></div>
-            </motion.div>
-            <motion.div
-              className="floating-card floating-card-ship"
-              animate={shouldReduceMotion ? undefined : { y: [0, -9, 0], rotate: [0, 2, 0] }}
-              transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            >
-              <span className="mini-status" /><div><strong>Ship</strong><span>with care</span></div>
-            </motion.div>
+            <HeroProfileCard />
           </motion.div>
         </section>
 

@@ -11,6 +11,7 @@ export type PortfolioProject = {
   live?: string;
   code?: string;
   tone: ProjectTone;
+  image?: string;
 };
 
 export const projects: PortfolioProject[] = [
@@ -26,6 +27,7 @@ export const projects: PortfolioProject[] = [
     stack: ["Python", "Flask", "LLM", "Vector search", "MongoDB"],
     live: "https://cse-dev.vercel.app/",
     tone: "violet",
+    image: "/projects/rag.jpg",
   },
   {
     id: "library-system",
@@ -39,6 +41,7 @@ export const projects: PortfolioProject[] = [
     stack: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
     live: "https://library-management-system-frontend-phi.vercel.app/",
     tone: "cyan",
+    image: "/projects/library.jpg",
   },
   {
     id: "python-games",
@@ -52,6 +55,7 @@ export const projects: PortfolioProject[] = [
     stack: ["Python", "Algorithms", "CLI"],
     code: "https://github.com/Kanzu11/Phyton",
     tone: "amber",
+    image: "/projects/python.jpg",
   },
 ];
 

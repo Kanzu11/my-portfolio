@@ -1,14 +1,16 @@
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router";
 import { contactLinks } from "../data/portfolio";
+import { useResumeModal } from "../context/ResumeModalContext";
 
 export default function Footer() {
+  const { openResume } = useResumeModal();
+
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="footer-intro">
           <Link to="/" className="brand">
-            <span className="brand-mark" aria-hidden="true">KA</span>
             <span>Kanzedin Akmel</span>
           </Link>
           <p>Full-stack developer building reliable systems for people and teams.</p>
@@ -28,11 +30,18 @@ export default function Footer() {
           <a href={`mailto:${contactLinks.email}`}>
             <Mail size={17} aria-hidden="true" /> Email
           </a>
+          <button
+            type="button"
+            onClick={openResume}
+            className="footer-resume-link"
+          >
+            <FileText size={17} aria-hidden="true" /> View Resume
+          </button>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Kanzedin Akmel</span>
-        <span>Designed with intention · Built with React</span>
+        <span>Adama Science and Technology University · ECE</span>
       </div>
     </footer>
   );

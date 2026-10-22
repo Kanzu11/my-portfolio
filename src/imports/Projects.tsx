@@ -33,7 +33,7 @@ export default function Projects() {
           <Reveal>
             <SectionHeading
               eyebrow="Case studies"
-              title={<>Recent builds, <em>without the fluff.</em></>}
+              title={<>Recent <em>builds.</em></>}
               description="Each project begins with a real workflow and ends with an experience that is easier to use and maintain."
             />
           </Reveal>

@@ -10,8 +10,17 @@ import HeroProfileCard from "../app/components/HeroProfileCard";
 import { useResumeModal } from "../app/context/ResumeModalContext";
 import { projects, skills } from "../app/data/portfolio";
 
-const headline = ["I build digital", "systems that feel", "clear and dependable."];
-const toolbelt = ["React", "Node.js", "Python", "MongoDB", "REST APIs", "RAG systems"];
+const headline = ["I build web apps,", "Telegram bots, and", "AI tools."];
+const toolbelt = [
+  "React",
+  "Node.js",
+  "Telegram Bots",
+  "Telegram Mini Apps",
+  "Python",
+  "MongoDB",
+  "REST APIs",
+  "RAG",
+];
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
@@ -30,10 +39,10 @@ export default function Home() {
               transition={{ duration: shouldReduceMotion ? 0.01 : 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="status-dot" />
-              Open to full-stack opportunities
+              Open to full-stack roles
             </motion.div>
 
-            <h1 className="hero-title" aria-label="I build digital systems that feel clear and dependable.">
+            <h1 className="hero-title" aria-label="I build web apps, Telegram bots, and AI tools.">
               {headline.map((line, index) => (
                 <span className="hero-title-line" key={line}>
                   <motion.span
@@ -57,8 +66,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: shouldReduceMotion ? 0.01 : 0.55, delay: shouldReduceMotion ? 0 : 0.56 }}
             >
-              I’m Kanzedin Akmel, a full-stack developer and ECE student at ASTU in Adama, Ethiopia. I turn complex
-              requirements into thoughtful web applications, APIs, and AI-assisted tools.
+              I’m Kanzedin Akmel, a full-stack developer and engineering student at ASTU in Adama, Ethiopia. Currently
+              a web developer at CSEC ASTU. I build web applications, Telegram bots &amp; mini apps, and practical AI tools.
             </motion.p>
 
             <motion.div
@@ -68,10 +77,10 @@ export default function Home() {
               transition={{ duration: shouldReduceMotion ? 0.01 : 0.55, delay: shouldReduceMotion ? 0 : 0.66 }}
             >
               <Link to="/projects" className="button button-primary">
-                Explore selected work <ArrowDownRight size={18} aria-hidden="true" />
+                See my work <ArrowDownRight size={18} aria-hidden="true" />
               </Link>
               <Link to="/contacts" className="button button-quiet">
-                Let’s work together
+                Get in touch
               </Link>
             </motion.div>
 
@@ -82,7 +91,7 @@ export default function Home() {
               transition={{ duration: shouldReduceMotion ? 0.01 : 0.5, delay: shouldReduceMotion ? 0 : 0.84 }}
             >
               <MapPin size={16} aria-hidden="true" />
-              Based in Adama · Available remotely
+              Adama, Ethiopia · GMT+3 · Open to remote work
             </motion.div>
           </div>
 
@@ -112,13 +121,13 @@ export default function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="01 / Selected work"
-              title={<>Built around <em>real</em> use cases.</>}
-              description="A small selection of products where application logic, reliability, and a clear user flow meet."
-              action={<Link className="text-link all-work-link" to="/projects">See all work <ArrowRight size={16} aria-hidden="true" /></Link>}
+              title={<>Recent <em>projects.</em></>}
+              description="AI knowledge systems, automated 24/7 Telegram bots, and full-stack web platforms built end to end."
+              action={<Link className="text-link all-work-link" to="/projects">All projects <ArrowRight size={16} aria-hidden="true" /></Link>}
             />
           </Reveal>
           <div className="project-grid project-grid-home">
-            {projects.slice(0, 2).map((project, index) => (
+            {projects.slice(0, 4).map((project, index) => (
               <ProjectCard project={project} featured={index === 0} key={project.id} />
             ))}
           </div>
@@ -126,28 +135,28 @@ export default function Home() {
 
         <Reveal className="proof-strip">
           <div>
+            <strong>24/7</strong>
+            <span>automated live operations on Telegram</span>
+          </div>
+          <div>
             <strong>50+</strong>
-            <span>documents processed in a RAG workflow</span>
+            <span>documents indexed by the RAG chatbot</span>
           </div>
           <div>
             <strong>60%</strong>
-            <span>less manual handling for library operations</span>
-          </div>
-          <div>
-            <strong>MERN + Python</strong>
-            <span>a practical, full-stack toolkit</span>
+            <span>less manual data handling in library platform</span>
           </div>
         </Reveal>
 
         <section className="section-block capability-section">
           <Reveal className="capability-copy">
-            <p className="eyebrow">02 / Capability</p>
-            <h2>From interface to infrastructure.</h2>
+            <p className="eyebrow">02 / Skills</p>
+            <h2>Frontend, backend, and some hardware.</h2>
             <p className="section-description">
-              My background in electrical and computer engineering keeps me close to the details: how things connect,
-              where they fail, and what makes a system easier to trust.
+              Most of my work is in JavaScript and Python. Studying electronics has made me careful about how parts
+              connect and where they break, and that habit carries over to APIs and databases.
             </p>
-            <Link className="text-link" to="/about">More about my approach <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link className="text-link" to="/about">More about me <ArrowRight size={16} aria-hidden="true" /></Link>
           </Reveal>
 
           <Reveal className="capability-groups" delay={0.1}>
@@ -164,11 +173,11 @@ export default function Home() {
         <Reveal>
           <section className="closing-cta">
             <div>
-              <p className="eyebrow">Have a project in mind?</p>
-              <h2>Let’s make the next useful thing.</h2>
+              <p className="eyebrow">Hiring, or have a project?</p>
+              <h2>Tell me what you’re building.</h2>
             </div>
             <Link to="/contacts" className="button button-light">
-              Start a conversation <ArrowRight size={18} aria-hidden="true" />
+              Get in touch <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </section>
         </Reveal>

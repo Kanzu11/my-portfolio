@@ -113,7 +113,7 @@ export default function Header() {
               openResume();
             }}
             className="dock-resume-btn"
-            title="Preview resume in browser"
+            title="View resume"
           >
             <Eye size={14} className="dock-resume-icon" />
             <span>Resume</span>
@@ -167,7 +167,7 @@ export default function Header() {
                   className="mobile-menu-resume-btn"
                 >
                   <FileText size={15} />
-                  <span>View Resume</span>
+                  <span>Resume</span>
                 </button>
               </div>
             </motion.div>

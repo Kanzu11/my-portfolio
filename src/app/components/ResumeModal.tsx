@@ -68,7 +68,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </span>
                 <div>
                   <h3 className="resume-modal-title">Kanzedin_Akmel_Resume.pdf</h3>
-                  <span className="resume-modal-subtitle">Full-Stack & Systems Developer · ASTU</span>
+                  <span className="resume-modal-subtitle">Full-stack developer · PDF</span>
                 </div>
               </div>
 
@@ -78,7 +78,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="resume-action-btn secondary"
-                  title="Open PDF in a dedicated browser tab"
+                  title="Open the PDF in a new tab"
                 >
                   <ExternalLink size={15} />
                   <span>Open in tab</span>
@@ -88,10 +88,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   type="button"
                   onClick={handleDownload}
                   className="resume-action-btn primary"
-                  title="Download copy to your device"
+                  title="Download the PDF"
                 >
                   {downloaded ? <Check size={15} /> : <Download size={15} />}
-                  <span>{downloaded ? "Saved!" : "Download"}</span>
+                  <span>{downloaded ? "Downloaded" : "Download"}</span>
                 </button>
 
                 <button
@@ -118,14 +118,14 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   title="Kanzedin Akmel Resume"
                 >
                   <div className="resume-fallback-notice">
-                    <p>Your browser could not preview the PDF directly.</p>
+                    <p>Your browser can’t show the PDF here.</p>
                     <a
                       href="/Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="button button-primary"
                     >
-                      Open PDF in New Window
+                      Open the PDF
                     </a>
                   </div>
                 </iframe>

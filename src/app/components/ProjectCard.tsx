@@ -9,6 +9,8 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const primaryUrl = project.live ?? project.code;
+  const displayUrl = primaryUrl ? primaryUrl.replace(/^https?:\/\//, "").replace(/\/$/, "") : project.category;
 
   return (
     <motion.article
@@ -22,13 +24,13 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       <div className="project-art" aria-hidden="true">
         <div className="project-art-topline">
           <span>{project.number}</span>
-          <span>CASE STUDY</span>
+          <span>{project.live ? (project.live.includes("t.me") ? "● Live Bot" : "● Live") : "Source"}</span>
         </div>
         {project.image ? (
           <div className="project-art-image-wrap">
             <img
               src={project.image}
-              alt={project.title}
+              alt=""
               className="project-art-img"
               loading="lazy"
             />
@@ -43,7 +45,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         <div className="project-art-grid" />
         <div className="project-art-copy">
           <Layers3 size={17} strokeWidth={1.7} />
-          <span>{project.category}</span>
+          <span>{displayUrl}</span>
         </div>
         <div className="project-art-line project-art-line-one" />
         <div className="project-art-line project-art-line-two" />
@@ -66,12 +68,13 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         <div className="project-links">
           {project.live ? (
             <a href={project.live} target="_blank" rel="noreferrer" className="text-link">
-              Visit project <ArrowUpRight size={16} aria-hidden="true" />
+              {project.live.includes("t.me") ? "Open in Telegram" : "Live site"}{" "}
+              <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           ) : null}
           {project.code ? (
             <a href={project.code} target="_blank" rel="noreferrer" className="text-link">
-              View source <Github size={16} aria-hidden="true" />
+              Source code <Github size={16} aria-hidden="true" />
             </a>
           ) : null}
         </div>

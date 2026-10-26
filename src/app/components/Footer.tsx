@@ -13,14 +13,14 @@ export default function Footer() {
           <Link to="/" className="brand">
             <span>Kanzedin Akmel</span>
           </Link>
-          <p>Full-stack developer building reliable systems for people and teams.</p>
+          <p>Full-stack developer and engineering student in Adama, Ethiopia.</p>
           <a href={`mailto:${contactLinks.email}`} className="footer-email">
             {contactLinks.email} <ArrowUpRight size={15} aria-hidden="true" />
           </a>
         </div>
 
         <div className="footer-links">
-          <p className="footer-label">Elsewhere</p>
+          <p className="footer-label">Links</p>
           <a href={contactLinks.github} target="_blank" rel="noreferrer">
             <Github size={17} aria-hidden="true" /> GitHub
           </a>
@@ -35,13 +35,13 @@ export default function Footer() {
             onClick={openResume}
             className="footer-resume-link"
           >
-            <FileText size={17} aria-hidden="true" /> View Resume
+            <FileText size={17} aria-hidden="true" /> Resume
           </button>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Kanzedin Akmel</span>
-        <span>Adama Science and Technology University · ECE</span>
+        <span>Adama, Ethiopia · GMT+3</span>
       </div>
     </footer>
   );

@@ -16,8 +16,8 @@ export default function HeroProfileCard() {
   const mouseXSpring = useSpring(x, { stiffness: 220, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 220, damping: 20 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
 
   // Dynamic light glare position
   const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
@@ -55,7 +55,7 @@ export default function HeroProfileCard() {
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.2 }}
       >
         {/* Dynamic Specular Glass Glare with warm subtle tone */}
@@ -79,7 +79,7 @@ export default function HeroProfileCard() {
           <div className="hero-profile-topbar">
             <div className="hero-profile-status">
               <span className="hero-pulse-dot" />
-              <span className="hero-status-text">ECE &amp; Full-Stack</span>
+              <span className="hero-status-text">Open to work</span>
             </div>
           </div>
 
@@ -96,7 +96,7 @@ export default function HeroProfileCard() {
             {/* In-photo Badge Overlay - Fullstack Web Developer */}
             <div className="hero-profile-overlay-badge">
               <span className="badge-name">Kanzedin Akmel</span>
-              <span className="badge-title">Fullstack Web Developer</span>
+              <span className="badge-title">Full-stack developer</span>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export default function HeroProfileCard() {
               </div>
               <div className="hero-meta-item">
                 <Cpu size={13} />
-                <span>Electronics &amp; Comm.</span>
+                <span>Engineering @ ASTU</span>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function HeroProfileCard() {
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <Terminal size={14} className="chip-icon" />
-          <span>Python · Flask · RAG</span>
+          <span>Python · Telegram Bots · RAG</span>
         </motion.div>
 
         <motion.div
@@ -139,7 +139,7 @@ export default function HeroProfileCard() {
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
         >
           <Code2 size={14} className="chip-icon" />
-          <span>React · TypeScript · Node</span>
+          <span>React · Node · MongoDB</span>
         </motion.div>
       </motion.div>
     </div>

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, CircuitBoard, GraduationCap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Code2, FileText, GraduationCap, Users } from "lucide-react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import Reveal from "../app/components/Reveal";
@@ -22,28 +22,33 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.01 : 0.62, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">About / Kanzedin Akmel</p>
-          <h1>A systems mindset, applied to the web.</h1>
+          <p className="eyebrow">About</p>
+          <h1>Engineering student. Full-stack developer.</h1>
           <p>
-            I’m a full-stack developer and Electrical &amp; Computer Engineering student who enjoys turning dense
-            problems into clear, useful tools.
+            I’m Kanzedin Akmel. I study Electronics &amp; Communication Engineering at ASTU, build full-stack web
+            applications, and develop automated Telegram bots and mini apps. Currently working as a web developer at CSEC ASTU.
           </p>
         </motion.section>
 
         <section className="about-story section-block">
           <Reveal className="story-main">
-            <p className="eyebrow">A little context</p>
-            <h2>I like the point where software meets the real world.</h2>
+            <p className="eyebrow">Background</p>
+            <h2>How I got into software.</h2>
             <div className="story-copy">
               <p>
-                I’m based in Adama, Ethiopia, studying Electronics &amp; Communication Engineering at Adama Science and
-                Technology University. That discipline has trained me to respect constraints, connections, and the
-                small details that make a system reliable.
+                I’m from Adama, Ethiopia, and I’m studying at Adama Science and Technology University. Engineering
+                taught me to work within constraints and to test something before trusting it. I try to bring the
+                same habits to code.
               </p>
               <p>
-                In software, I focus on full-stack applications, RESTful APIs, authentication, and AI-assisted
-                knowledge tools. I’m especially interested in products where good engineering makes a messy process
-                calmer and more useful for the people inside it.
+                I got into web development through a three-week bootcamp at ASTUMSJ, where a team of five of us built
+                a library management system from scratch. Since then I’ve built a RAG chatbot, a 24/7 Telegram delivery
+                bot with automated geolocation pricing, completed an internship at Codveda Technologies, and currently work
+                as a web developer with CSEC ASTU.
+              </p>
+              <p>
+                I focus on the full stack: React and Node.js on the web, Python for Telegram bots and mini apps, and
+                APIs and databases that keep workflows fast and dependable.
               </p>
             </div>
           </Reveal>
@@ -52,23 +57,49 @@ export default function About() {
             <div className="about-portrait-wrap">
               <img
                 src="/profile.jpg"
-                alt="Kanzedin Akmel"
+                alt="Portrait of Kanzedin Akmel"
                 className="about-portrait-img"
               />
               <div className="about-portrait-badge">
                 <span className="portrait-status-dot" />
-                <span>ASTU · ECE</span>
+                <span>Open to work</span>
               </div>
             </div>
-            <CircuitBoard size={24} aria-hidden="true" />
-            <p>“Build the clearest path through the complexity.”</p>
-            <span>Working principle · Kanzedin Akmel</span>
+            <dl className="about-facts">
+              <div>
+                <dt>Based in</dt>
+                <dd>Adama, Ethiopia</dd>
+              </div>
+              <div>
+                <dt>Studying</dt>
+                <dd>ECE at ASTU, 2023 – 2028</dd>
+              </div>
+              <div>
+                <dt>Currently</dt>
+                <dd>Web Developer at CSEC ASTU</dd>
+              </div>
+              <div>
+                <dt>English</dt>
+                <dd>
+                  <a
+                    href="https://cert.efset.org/9XcoLE"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="about-fact-link"
+                    title="Official EF SET Certificate | Kanzedin Akmel"
+                  >
+                    C1 (EF SET) <ArrowUpRight size={13} aria-hidden="true" />
+                  </a>
+                </dd>
+              </div>
+            </dl>
             <button
               type="button"
               onClick={openResume}
               className="about-resume-cta"
             >
-              Inspect Resume in Browser
+              <FileText size={15} aria-hidden="true" />
+              View resume
             </button>
           </Reveal>
         </section>
@@ -76,40 +107,49 @@ export default function About() {
         <section className="section-block timeline-section">
           <Reveal>
             <SectionHeading
-              eyebrow="Path so far"
-              title={<>Learning fast. <em>Building deliberately.</em></>}
-              description="A short timeline of the education and hands-on work shaping my approach."
+              eyebrow="Experience"
+              title={<>Work and <em>education.</em></>}
+              description="Most recent first."
             />
           </Reveal>
           <div className="timeline">
             <Reveal className="timeline-item" delay={0.05}>
-              <div className="timeline-icon"><GraduationCap size={20} aria-hidden="true" /></div>
-              <div className="timeline-date">2023 — 2028</div>
+              <div className="timeline-icon"><Code2 size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">2026 — Present</div>
               <div className="timeline-content">
-                <p className="timeline-type">Education</p>
-                <h3>B.Sc. in Electronics &amp; Communication Engineering</h3>
-                <p>Adama Science and Technology University · Adama, Ethiopia</p>
+                <p className="timeline-type">Experience · Adama</p>
+                <h3>Full-stack Web Developer</h3>
+                <p>CSEC ASTU</p>
               </div>
             </Reveal>
             <Reveal className="timeline-item" delay={0.1}>
               <div className="timeline-icon"><BriefcaseBusiness size={20} aria-hidden="true" /></div>
-              <div className="timeline-date">Hands-on bootcamp</div>
+              <div className="timeline-date">2026</div>
               <div className="timeline-content">
-                <p className="timeline-type">Experience</p>
-                <h3>Full-stack Library Management System</h3>
-                <p>
-                  Collaborated in a five-person team to build the React, Node.js, Express, and MongoDB application
-                  from user flows through deployment.
-                </p>
+                <p className="timeline-type">Internship · Remote</p>
+                <h3>Full-stack Web Development Intern</h3>
+                <p>Codveda Technologies (Completed)</p>
               </div>
             </Reveal>
             <Reveal className="timeline-item" delay={0.15}>
-              <div className="timeline-icon"><CircuitBoard size={20} aria-hidden="true" /></div>
-              <div className="timeline-date">Continuous learning</div>
+              <div className="timeline-icon"><Users size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">2025</div>
               <div className="timeline-content">
-                <p className="timeline-type">Training</p>
-                <h3>Web development, data analysis &amp; programming fundamentals</h3>
-                <p>Complementing an engineering foundation with practical software, data, and problem-solving skills.</p>
+                <p className="timeline-type">Bootcamp · Adama</p>
+                <h3>Full-stack Web Development Bootcamp, ASTUMSJ</h3>
+                <p>
+                  A three-week hands-on program. Built a library management system with a five-person team using
+                  React, Node.js, Express and MongoDB, then deployed it on Vercel.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal className="timeline-item" delay={0.2}>
+              <div className="timeline-icon"><GraduationCap size={20} aria-hidden="true" /></div>
+              <div className="timeline-date">2023 — 2028</div>
+              <div className="timeline-content">
+                <p className="timeline-type">Education</p>
+                <h3>B.Sc. Electronics &amp; Communication Engineering</h3>
+                <p>Adama Science and Technology University · Expected June 2028</p>
               </div>
             </Reveal>
           </div>
@@ -118,8 +158,8 @@ export default function About() {
         <section className="section-block skills-section">
           <Reveal>
             <SectionHeading
-              eyebrow="Toolbox"
-              title={<>The tools are only useful when the <em>thinking</em> is sound.</>}
+              eyebrow="Skills"
+              title={<>What I <em>work with.</em></>}
             />
           </Reveal>
           <div className="skills-grid">
@@ -138,11 +178,11 @@ export default function About() {
         <Reveal>
           <section className="closing-cta closing-cta-quiet">
             <div>
-              <p className="eyebrow">Looking ahead</p>
-              <h2>I’m always interested in an honest technical challenge.</h2>
+              <p className="eyebrow">Get in touch</p>
+              <h2>Have a role or a project in mind? I’d like to hear about it.</h2>
             </div>
             <Link to="/contacts" className="button button-light">
-              Say hello <ArrowRight size={18} aria-hidden="true" />
+              Contact me <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </section>
         </Reveal>

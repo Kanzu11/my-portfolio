@@ -21,20 +21,20 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.01 : 0.62, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">Selected work / 2024—present</p>
-          <h1>Projects with a job to do.</h1>
+          <p className="eyebrow">Work / 2025 — present</p>
+          <h1>Things I’ve built.</h1>
           <p>
-            I care about making the complicated parts feel simple: useful data, steady infrastructure, and interfaces
-            that give people confidence.
+            Projects I’ve designed, built and deployed. Spanning full-stack web platforms, 24/7 Telegram bots &amp;
+            mini apps, and AI-assisted tools.
           </p>
         </motion.section>
 
         <section className="section-block page-projects-section">
           <Reveal>
             <SectionHeading
-              eyebrow="Case studies"
+              eyebrow="All projects"
               title={<>Recent <em>builds.</em></>}
-              description="Each project begins with a real workflow and ends with an experience that is easier to use and maintain."
+              description="Real systems solving real problems: automating on-demand delivery, answering questions from documents, or managing library operations."
             />
           </Reveal>
           <div className="project-grid project-grid-all">
@@ -47,28 +47,28 @@ export default function Projects() {
         <Reveal className="working-style">
           <div className="working-style-lead">
             <p className="eyebrow">How I work</p>
-            <h2>Focused on the parts that make software stick.</h2>
+            <h2>How I approach a new project.</h2>
           </div>
           <div className="working-style-list">
             <article>
               <span>01</span>
               <div>
-                <h3>Start with the workflow</h3>
-                <p>Understand the decisions, roles, and edge cases before giving the interface a shape.</p>
+                <h3>Understand the workflow first</h3>
+                <p>Who uses it, what they need to get done, and where things go wrong. I map that out before building any screens.</p>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Make the system legible</h3>
-                <p>Prefer clear states, useful feedback, and APIs that make the next feature easier to build.</p>
+                <h3>Keep the backend clean</h3>
+                <p>Clear data models, predictable REST endpoints and proper auth, so adding a feature doesn’t break an old one.</p>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Ship deliberately</h3>
-                <p>Polish the details that affect trust, then keep the product moving with a maintainable stack.</p>
+                <h3>Ship early, then improve</h3>
+                <p>Deploy as soon as it works, test it on real phones and laptops, and fix what people actually run into.</p>
               </div>
             </article>
           </div>
@@ -78,8 +78,8 @@ export default function Projects() {
           <section className="project-availability">
             <CheckCircle2 size={24} aria-hidden="true" />
             <div>
-              <p className="eyebrow">Next collaboration</p>
-              <h2>Available for thoughtful full-stack work.</h2>
+              <p className="eyebrow">Open to work</p>
+              <h2>Looking for a full-stack developer?</h2>
             </div>
             <Link to="/contacts" className="text-link">Get in touch <ArrowRight size={16} aria-hidden="true" /></Link>
           </section>
